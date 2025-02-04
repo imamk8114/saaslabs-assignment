@@ -1,0 +1,99 @@
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.records-per-page {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.records-per-page select {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.nav-button, .page-number {
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover:not(:disabled),
+.page-number:hover:not(.active) {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.page-number.active {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.records-info {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 640px) {
+  .pagination-container {
+    gap: 15px;
+  }
+  
+  .page-numbers {
+    display: none;
+  }
+  
+  .records-per-page {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.ellipsis {
+  padding: 8px 16px;
+  color: #6b7280;
+}
+
+.page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Add to existing Pagination.css */
+.nav-button:focus,
+.page-number:focus,
+select:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
